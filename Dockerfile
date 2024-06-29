@@ -11,8 +11,9 @@ RUN apk add --no-cache \
     py3-setuptools \
     py3-wheel \
     rsync \
+    mongodb-tools \
+    && python3 -m venv /venv \
+    && source /venv/bin/activate \
     && pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir \
-    awscli \
-    yq \
-    mongodb-tools
+    && pip install --no-cache-dir awscli
+
