@@ -25,7 +25,6 @@ jobs:
               id: next-tag
               run: |
                   TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-                  TAG="${TAG%.*}.$((${TAG##*.}+1))"
                   echo "::set-output name=tag::$TAG"
               shell: bash
 
